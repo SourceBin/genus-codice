@@ -1,0 +1,3 @@
+[submodule "RosettaCodeData"]
+	path = RosettaCodeData
+	url = git@github.com:acmeism/RosettaCodeData.git
