@@ -15,14 +15,14 @@ chunk_size = 2048
 for i in data:
   for chunk in range(0, len(i[0]), chunk_size):
     snippet = i[0][chunk:chunk + chunk_size]
-    snippet = re.sub(r'\W', ' ', snippet)
+    snippet = re.sub(r'(\w+)', r' \1 ', snippet)
     snippet = snippet.lower()
 
     d.append({ 'snippet': snippet, 'language': i[1] })
 
 df = pd.DataFrame(d, columns = ['snippet', 'language'])
 
-snippet_tokenizer = tf.keras.preprocessing.text.Tokenizer()
+snippet_tokenizer = tf.keras.preprocessing.text.Tokenizer(filters='\n\t')
 snippet_tokenizer.fit_on_texts(df['snippet'])
 snippet_tensor = snippet_tokenizer.texts_to_sequences(df['snippet'])
 
