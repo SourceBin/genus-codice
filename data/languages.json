@@ -1,0 +1,129 @@
+{
+  "JavaScript": {
+    "extensions": [".js", ".cjs"]
+  },
+  "TypeScript": {
+    "extensions": [".ts"]
+  },
+  "Java": {
+    "extensions": [".java"]
+  },
+  "Python": {
+    "extensions": [".py"]
+  },
+  "Kotlin": {
+    "extensions": [".kt", ".ktm", ".kts"]
+  },
+  "C": {
+    "extensions": [".c", ".h"]
+  },
+  "C++": {
+    "extensions": [".c++", ".cpp", ".h++", ".hpp"]
+  },
+  "C#": {
+    "extensions": [".cs"]
+  },
+  "Erlang": {
+    "extensions": [".erl"]
+  },
+  "Elixir": {
+    "extensions": [".ex", ".exs"]
+  },
+  "Haskell": {
+    "extensions": [".hs"]
+  },
+  "Go": {
+    "extensions": [".go"]
+  },
+  "PHP": {
+    "extensions": [".php"]
+  },
+  "Ruby": {
+    "extensions": [".rb"]
+  },
+  "Rust": {
+    "extensions": [".rs"]
+  },
+  "Scala": {
+    "extensions": [".scala"]
+  },
+  "Swift": {
+    "extensions": [".swift"]
+  },
+  "Common Lisp": {
+    "extensions": [".lisp"]
+  },
+  "Clojure": {
+    "extensions": [".clj"]
+  },
+  "R": {
+    "extensions": [".r"]
+  },
+  "MATLAB": {
+    "extensions": [".matlab", ".m"]
+  },
+  "Assembly": {
+    "extensions": [".asm", ".nasm"]
+  },
+  "D": {
+    "extensions": [".d"]
+  },
+  "Dart": {
+    "extensions": [".dart"]
+  },
+  "Julia": {
+    "extensions": [".jl"]
+  },
+  "Groovy": {
+    "extensions": [".groovy"]
+  },
+  "Haxe": {
+    "extensions": [".hx"]
+  },
+  "Lua": {
+    "extensions": [".lua"]
+  },
+
+  "Shell": {
+    "extensions": [".sh", ".bash"]
+  },
+  "PowerShell": {
+    "extensions": [".ps1", ".psd1", ".psm1"]
+  },
+  "SQL": {
+    "extensions": [".sql"]
+  },
+  "Dockerfile": {
+    "filenames": ["Dockerfile"],
+    "extensions": [".dockerfile"]
+  },
+
+  "Markdown": {
+    "extensions": [".md", ".markdown", ".mdown"]
+  },
+  "HTML": {
+    "extensions": [".html", ".htm"]
+  },
+  "CSS": {
+    "extensions": [".css"]
+  },
+  "Sass": {
+    "extensions": [".sass"]
+  },
+  "SCSS": {
+    "extensions": [".scss"]
+  },
+  "Vue": {
+    "extensions": [".vue"]
+  },
+
+  "JSON": {
+    "extensions": [".json"]
+  },
+  "YAML": {
+    "extensions": [".yml", ".yaml"]
+  },
+  "XML": {
+    "extensions": [".xml"]
+  }
+}

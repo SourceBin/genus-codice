@@ -1,1 +1,3 @@
 __pycache__
+data/dataset/*.csv.gz
+data/source/*.csv.gz
