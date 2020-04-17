@@ -1,42 +1,37 @@
-import model
+import re
 import utils
 import dataset
-import pandas as pd
-import tensorflow as tf
-import sklearn.model_selection as sk
 
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+print('Loading dataset')
 data = dataset.load()
-print(data.groupby('lang').size())
-
-print('Normalizing dataset')
-rows = []
-for i, row in data.iterrows():
-  for chunk in utils.normalize_content(row['content']):
-    rows.append({ 'content': chunk, 'lang': row['lang'] })
-
-data = pd.DataFrame(rows)
 print(data)
 print(data.groupby('lang').size())
 
-print('Tokenizing')
-content_tokenizer = tf.keras.preprocessing.text.Tokenizer(filters='\n\t', num_words=1000)
-content_tokenizer.fit_on_texts(data['content'])
-content_tensor = content_tokenizer.texts_to_sequences(data['content'])
+print('Normalizing dataset')
+data['content'] = data['content'].apply(utils.normalize_content)
+print(data)
 
-max_length = max([len(s.split()) for s in data['content']])
-content_tensor = tf.keras.preprocessing.sequence.pad_sequences(content_tensor, maxlen=max_length, padding='post')
+print('Building pipeline')
+pipeline = Pipeline(steps=[
+  ('tfidf', TfidfVectorizer()),
+  ('random_forest', RandomForestClassifier(verbose=2, n_jobs=-1)),
+])
 
-print('Building model')
-vocab_size = len(content_tokenizer.word_index) + 1
-model = model.build(vocab_size=vocab_size, input_length=max_length, output_size=len(set(data['lang'])))
-model.summary()
+print('Splitting data')
+x_train, x_test, y_train, y_test = train_test_split(data['content'], data['lang'], test_size=0.2)
 
-print('Splitting dataset')
-x_train, x_test, y_train, y_test = sk.train_test_split(content_tensor, data['lang'], test_size=0.2)
+print('Fitting model')
+pipeline.fit(x_train, y_train)
 
-y_train = pd.get_dummies(y_train)
-y_test = pd.get_dummies(y_test)
+print('Predicting model')
+preds = pipeline.predict(x_test)
 
-categorical_labels = tf.keras.utils.to_categorical(y_train, num_classes=None)
-
-history = model.fit(x_train, y_train, batch_size=64, epochs=10, validation_data=(x_test, y_test))
+print('Measuring accuracy')
+score = accuracy_score(y_test, preds)
+print(score)
