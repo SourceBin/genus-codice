@@ -1,5 +1,4 @@
 import re
-import utils
 import dataset
 
 from sklearn.pipeline import Pipeline
@@ -13,13 +12,9 @@ data = dataset.load()
 print(data)
 print(data.groupby('lang').size())
 
-print('Normalizing dataset')
-data['content'] = data['content'].apply(utils.normalize_content)
-print(data)
-
 print('Building pipeline')
 pipeline = Pipeline(steps=[
-  ('tfidf', TfidfVectorizer()),
+  ('tfidf', TfidfVectorizer(token_pattern=r'\w+|[^\w\s]+')),
   ('random_forest', RandomForestClassifier(verbose=2, n_jobs=-1)),
 ])
 

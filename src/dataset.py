@@ -6,7 +6,6 @@ DATASET_DIR = 'data/dataset'
 def load():
   frames = []
   files = [x for x in os.listdir(DATASET_DIR) if x.endswith('.csv.gz')]
-  files = [files[0]] # TODO: remove
 
   for i, file in enumerate(files, start=1):
     print(f'{i}/{len(files)} - {file}')
