@@ -1,4 +1,5 @@
 import re
+import joblib
 import dataset
 
 from sklearn.pipeline import Pipeline
@@ -6,6 +7,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+OUTPUT_FILE = 'data/model.joblib'
 
 print('Loading dataset')
 data = dataset.load()
@@ -30,3 +33,6 @@ preds = pipeline.predict(x_test)
 print('Measuring accuracy')
 score = accuracy_score(y_test, preds)
 print(score)
+
+print('Saving model')
+joblib.dump(pipeline, OUTPUT_FILE)

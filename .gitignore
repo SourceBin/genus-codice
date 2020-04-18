@@ -1,2 +1,3 @@
 __pycache__
+data/model.joblib
 data/dataset/*.csv.gz
