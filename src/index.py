@@ -17,7 +17,7 @@ print(data.groupby('lang').size())
 
 print('Building pipeline')
 pipeline = Pipeline(steps=[
-  ('tfidf', TfidfVectorizer(token_pattern=r'\w+|[^\w\s]+', min_df=100)),
+  ('tfidf', TfidfVectorizer(token_pattern=r'\w+|[^\w\s]+', min_df=100, max_features=10_000)),
   ('random_forest', RandomForestClassifier(verbose=2, n_jobs=-1)),
 ])
 
