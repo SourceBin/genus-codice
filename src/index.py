@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-OUTPUT_FILE = 'data/model.joblib'
+OUTPUT_FILE = 'data/model.gz'
 
 print('Loading dataset')
 data = dataset.load()
