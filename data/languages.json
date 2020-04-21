@@ -1,129 +1,129 @@
 {
   "JavaScript": {
-    "extensions": [".js", ".cjs"]
+    "extensions": ["js", "cjs"]
   },
   "TypeScript": {
-    "extensions": [".ts"]
+    "extensions": ["ts"]
   },
   "Java": {
-    "extensions": [".java"]
+    "extensions": ["java"]
   },
   "Python": {
-    "extensions": [".py"]
+    "extensions": ["py"]
   },
   "Kotlin": {
-    "extensions": [".kt", ".ktm", ".kts"]
+    "extensions": ["kt", "ktm", "kts"]
   },
   "C": {
-    "extensions": [".c", ".h"]
+    "extensions": ["c", "h"]
   },
   "C++": {
-    "extensions": [".c++", ".cpp", ".h++", ".hpp"]
+    "extensions": ["c++", "cpp", "h++", "hpp"]
   },
   "C#": {
-    "extensions": [".cs"]
+    "extensions": ["cs"]
   },
   "Erlang": {
-    "extensions": [".erl"]
+    "extensions": ["erl"]
   },
   "Elixir": {
-    "extensions": [".ex", ".exs"]
+    "extensions": ["ex", "exs"]
   },
   "Haskell": {
-    "extensions": [".hs"]
+    "extensions": ["hs"]
   },
   "Go": {
-    "extensions": [".go"]
+    "extensions": ["go"]
   },
   "PHP": {
-    "extensions": [".php"]
+    "extensions": ["php"]
   },
   "Ruby": {
-    "extensions": [".rb"]
+    "extensions": ["rb"]
   },
   "Rust": {
-    "extensions": [".rs"]
+    "extensions": ["rs"]
   },
   "Scala": {
-    "extensions": [".scala"]
+    "extensions": ["scala"]
   },
   "Swift": {
-    "extensions": [".swift"]
+    "extensions": ["swift"]
   },
   "Common Lisp": {
-    "extensions": [".lisp"]
+    "extensions": ["lisp"]
   },
   "Clojure": {
-    "extensions": [".clj"]
+    "extensions": ["clj"]
   },
   "R": {
-    "extensions": [".r"]
+    "extensions": ["r"]
   },
   "MATLAB": {
-    "extensions": [".matlab", ".m"]
+    "extensions": ["matlab", "m"]
   },
   "Assembly": {
-    "extensions": [".asm", ".nasm"]
+    "extensions": ["asm", "nasm"]
   },
   "D": {
-    "extensions": [".d"]
+    "extensions": ["d"]
   },
   "Dart": {
-    "extensions": [".dart"]
+    "extensions": ["dart"]
   },
   "Julia": {
-    "extensions": [".jl"]
+    "extensions": ["jl"]
   },
   "Groovy": {
-    "extensions": [".groovy"]
+    "extensions": ["groovy"]
   },
   "Haxe": {
-    "extensions": [".hx"]
+    "extensions": ["hx"]
   },
   "Lua": {
-    "extensions": [".lua"]
+    "extensions": ["lua"]
   },
 
   "Shell": {
-    "extensions": [".sh", ".bash"]
+    "extensions": ["sh", "bash"]
   },
   "PowerShell": {
-    "extensions": [".ps1", ".psd1", ".psm1"]
+    "extensions": ["ps1", "psd1", "psm1"]
   },
   "SQL": {
-    "extensions": [".sql"]
+    "extensions": ["sql"]
   },
   "Dockerfile": {
     "filenames": ["Dockerfile"],
-    "extensions": [".dockerfile"]
+    "extensions": ["dockerfile"]
   },
 
   "Markdown": {
-    "extensions": [".md", ".markdown", ".mdown"]
+    "extensions": ["md", "markdown", "mdown"]
   },
   "HTML": {
-    "extensions": [".html", ".htm"]
+    "extensions": ["html", "htm"]
   },
   "CSS": {
-    "extensions": [".css"]
+    "extensions": ["css"]
   },
   "Sass": {
-    "extensions": [".sass"]
+    "extensions": ["sass"]
   },
   "SCSS": {
-    "extensions": [".scss"]
+    "extensions": ["scss"]
   },
   "Vue": {
-    "extensions": [".vue"]
+    "extensions": ["vue"]
   },
 
   "JSON": {
-    "extensions": [".json"]
+    "extensions": ["json"]
   },
   "YAML": {
-    "extensions": [".yml", ".yaml"]
+    "extensions": ["yml", "yaml"]
   },
   "XML": {
-    "extensions": [".xml"]
+    "extensions": ["xml"]
   }
 }
