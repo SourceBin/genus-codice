@@ -1,4 +1,7 @@
+import os
 import json
+
+CURR_DIR = os.path.abspath(os.path.dirname(__file__))
 
 query = r'''WITH
   languages AS (
@@ -44,7 +47,7 @@ WHERE
   (contents.content IS NOT NULL);
 '''
 
-with open('data/languages.json') as f:
+with open(os.path.join(CURR_DIR, '../data/languages.json')) as f:
   languages = json.load(f)
 
 matches = []
@@ -64,5 +67,5 @@ whens = [
   for match in matches
 ]
 
-with open('tools/bigquery_github_query.sql', 'w') as f:
+with open(os.path.join(CURR_DIR, 'bigquery_github_query.sql'), 'w') as f:
   f.write(query.format('\n'.join(whens)))

@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 
-DATASET_DIR = 'data/dataset'
+CURR_DIR = os.path.abspath(os.path.dirname(__file__))
+DATASET_DIR = os.path.join(CURR_DIR, '../data/dataset')
 
 def load():
   frames = []

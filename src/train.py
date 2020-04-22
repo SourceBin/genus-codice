@@ -1,4 +1,5 @@
 import re
+import os
 import joblib
 import dataset
 
@@ -8,7 +9,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-OUTPUT_FILE = 'data/model.gz'
+CURR_DIR = os.path.abspath(os.path.dirname(__file__))
+OUTPUT_FILE = os.path.join(CURR_DIR, '../data/model.gz')
 
 print('Loading dataset')
 data = dataset.load()
