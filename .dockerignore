@@ -1,0 +1,3 @@
+__pycache__
+data/model.gz
+data/dataset/*.csv.gz
