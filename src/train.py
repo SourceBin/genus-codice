@@ -18,13 +18,29 @@ print(data)
 print(data.groupby('lang').size())
 
 print('Building pipeline')
-pipeline = Pipeline(steps=[
-  ('tfidf', TfidfVectorizer(token_pattern=r'\w+|[^\w\s]+', min_df=100, max_features=10_000)),
-  ('random_forest', RandomForestClassifier(verbose=2, n_jobs=-1)),
-])
+pipeline = Pipeline(
+  verbose=True,
+  steps=[
+    ('tfidf', TfidfVectorizer(
+      token_pattern=r'\w+|[^\w\s]+',
+      min_df=100,
+      max_features=10_000,
+    )),
+    ('random_forest', RandomForestClassifier(
+      verbose=2,
+      n_jobs=-1,
+      random_state=42,
+    )),
+  ],
+)
 
 print('Splitting data')
-x_train, x_test, y_train, y_test = train_test_split(data['content'], data['lang'], test_size=0.2)
+x_train, x_test, y_train, y_test = train_test_split(
+  data['content'],
+  data['lang'],
+  test_size=0.2,
+  random_state=42,
+)
 
 print('Fitting model')
 pipeline.fit(x_train, y_train)
@@ -35,6 +51,9 @@ preds = pipeline.predict(x_test)
 print('Measuring accuracy')
 score = accuracy_score(y_test, preds)
 print(score)
+
+# Remove stop words to reduce model size
+pipeline['tfidf'].stop_words_ = None
 
 print('Saving model')
 joblib.dump(pipeline, OUTPUT_FILE)
